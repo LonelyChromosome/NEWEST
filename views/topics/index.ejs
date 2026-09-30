@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sach de tai</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="header-row">
+      <div>
+        <h1>Danh sach de tai NCKH</h1>
+        <p>Express MVC + EJS + SQLite</p>
+      </div>
+      <a class="button" href="/topics/create">Them de tai</a>
+    </div>
+
+    <form class="search-form" action="/topics" method="GET">
+      <input
+        type="text"
+        name="keyword"
+        placeholder="Tim ma, ten de tai, sinh vien, linh vuc..."
+        value="<%= keyword %>"
+      >
+      <button type="submit">Tim kiem</button>
+      <% if (keyword) { %>
+        <a class="button secondary" href="/topics">Xoa loc</a>
+      <% } %>
+    </form>
+
+    <% if (topics.length === 0) { %>
+      <div class="empty">Khong tim thay de tai phu hop.</div>
+    <% } else { %>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ma</th>
+              <th>Ten de tai</th>
+              <th>Sinh vien</th>
+              <th>Linh vuc</th>
+              <th>Giang vien HD</th>
+              <th>Thao tac</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% topics.forEach(topic => { %>
+              <tr>
+                <td><%= topic.code %></td>
+                <td><%= topic.title %></td>
+                <td><%= topic.student_name %></td>
+                <td><%= topic.field %></td>
+                <td><%= topic.advisor %></td>
+                <td class="actions">
+                  <a class="button small secondary" href="/topics/edit/<%= topic.id %>">Sua</a>
+                  <form
+                    class="inline"
+                    action="/topics/delete/<%= topic.id %>"
+                    method="POST"
+                    onsubmit="return confirm('Ban co chac muon xoa de tai nay?')"
+                  >
+                    <button class="button small danger" type="submit">Xoa</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>
