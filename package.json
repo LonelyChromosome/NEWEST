@@ -1,0 +1,15 @@
+{
+  "name": "research-topic-midterm",
+  "version": "1.0.0",
+  "description": "Bai giua ky Thiet ke Web nang cao - Express MVC + EJS + SQLite",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
