@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Đăng ký đề tài</title><link rel="stylesheet" href="/style.css"></head>
+<body><main><h1>Đăng ký đề tài</h1>
+<% if (error) { %><p class="error"><%= error %></p><% } %>
+<form method="post" action="/topics/new">
+<label>Mã đề tài<input name="code" value="<%= old.code || '' %>"></label>
+<label>Tên đề tài<input name="title" value="<%= old.title || '' %>"></label>
+<label>Sinh viên<input name="student_name" value="<%= old.student_name || '' %>"></label>
+<label>Lĩnh vực<input name="field" value="<%= old.field || '' %>"></label>
+<label>Giảng viên hướng dẫn<input name="advisor" value="<%= old.advisor || '' %>"></label>
+<button>Đăng ký</button>
+</form>
+</main></body></html>

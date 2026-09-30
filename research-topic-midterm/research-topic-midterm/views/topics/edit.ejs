@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Sửa đề tài</title><link rel="stylesheet" href="/style.css"></head>
+<body><main><h1>Sửa đề tài <%= topic.code %></h1>
+<form method="post" action="/topics/edit/<%= topic.id %>">
+<label>Tên đề tài<input name="title" value="<%= topic.title %>"></label>
+<label>Sinh viên<input name="student_name" value="<%= topic.student_name %>"></label>
+<label>Lĩnh vực<input name="field" value="<%= topic.field %>"></label>
+<label>Giảng viên hướng dẫn<input name="advisor" value="<%= topic.advisor %>"></label>
+<button>Lưu</button>
+</form>
+<p><a href="/topics">Quay lại danh sách</a></p>
+</main></body></html>

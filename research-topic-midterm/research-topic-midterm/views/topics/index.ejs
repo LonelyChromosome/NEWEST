@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Đề tài NCKH</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<h1>Quản lý đề tài NCKH sinh viên</h1>
+<form method="get" class="filters">
+  <input name="keyword" value="<%= keyword %>" placeholder="Mã, tên đề tài, sinh viên hoặc lĩnh vực">
+  <button>Tìm kiếm</button>
+</form>
+<p><a class="button" href="/topics/create">+ Thêm đề tài</a></p>
+<table><thead><tr><th>Mã</th><th>Tên đề tài</th><th>Sinh viên</th><th>Lĩnh vực</th><th>GVHD</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
+<% topics.forEach(t => { %>
+<tr>
+<td><%= t.code %></td><td><%= t.title %></td><td><%= t.student_name %></td><td><%= t.field %></td><td><%= t.advisor %></td><td><%= t.status %></td>
+<td><a href="/topics/edit/<%= t.id %>">Sửa</a>
+<form method="post" action="/topics/delete/<%= t.id %>" style="display:inline"><button type="submit">Xóa</button></form></td>
+</tr>
+<% }) %>
+</tbody></table>
+<% if (!topics.length) { %><p>Không tìm thấy đề tài phù hợp.</p><% } %>
+</main></body></html>
