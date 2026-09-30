@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Them de tai</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container form-page">
+    <h1>Them de tai</h1>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <form class="topic-form" action="/topics/create" method="POST">
+      <label>
+        Ma de tai
+        <input type="text" name="code" value="<%= values.code || '' %>" required>
+      </label>
+
+      <label>
+        Ten de tai
+        <input type="text" name="title" value="<%= values.title || '' %>" required>
+      </label>
+
+      <label>
+        Ten sinh vien
+        <input type="text" name="student_name" value="<%= values.student_name || '' %>" required>
+      </label>
+
+      <label>
+        Linh vuc
+        <input type="text" name="field" value="<%= values.field || '' %>" required>
+      </label>
+
+      <label>
+        Giang vien huong dan
+        <input type="text" name="advisor" value="<%= values.advisor || '' %>" required>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit">Luu de tai</button>
+        <a class="button secondary" href="/topics">Quay lai</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
