@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bài toán dịch vòng Z26</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="app"><header><span class="eyebrow">NEWEST × demoE / THUẬT TOÁN DỊCH VÒNG</span><h1>Mã hóa chuỗi ký tự</h1><p>Caesar Z26 · Hỗ trợ email, dấu câu, số và ký tự đặc biệt</p></header>
+<section class="panel"><div class="toolbar"><label>Khóa dịch vòng <input id="shiftKey" type="number" step="1" value="17"></label><div class="presets"><button type="button" data-key="17" class="active">k = 17</button><button type="button" data-key="3">k = 3</button></div></div>
+<label for="plainText">Bản rõ</label><textarea id="plainText" spellcheck="false" placeholder="Ví dụ: Nguyen-Van.A+123@gmail.com!">Nguyen-Van.A+123@gmail.com!</textarea>
+<div class="actions"><button id="encryptButton" class="primary">Mã hóa →</button><button id="decryptButton">← Giải mã</button><button id="swapButton">Đổi vị trí</button><button id="clearButton">Xóa</button></div>
+<label for="cipherText">Bản mã</label><textarea id="cipherText" spellcheck="false" placeholder="Kết quả mã hóa / nhập bản mã để giải mã"></textarea><p id="message" role="status" aria-live="polite">Sẵn sàng.</p></section>
+<section class="note"><strong>Cách hoạt động</strong><p>E(x) = (x + k) mod 26 · D(y) = (y − k + 26) mod 26. Chỉ thay đổi A–Z/a–z; giữ nguyên chữ có dấu, số, khoảng trắng, @, ., -, _ và các ký tự khác. Email mã hóa chỉ để minh họa, không còn là địa chỉ dùng để gửi thư.</p></section></main>
+<script src="thuat_toan/ma_dich_vong.js"></script></body></html>
